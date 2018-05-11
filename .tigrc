@@ -1,0 +1,8 @@
+set tab-size			= 2		# Number of spaces to use when expanding tabs
+set refresh-mode		= periodic	# Enum: manual, auto, after-command, periodic
+set refresh-interval		= 1		# Interval in seconds between refreshes
+
+set vertical-split		= horizontal	# Enum: horizontal, vertical, auto; Use auto to
+						# switch to horizontal split when width allows it
+set split-view-height		= 50%		# Height of the bottom view for horizontal splits
+
