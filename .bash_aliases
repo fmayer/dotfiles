@@ -1,4 +1,4 @@
-if [[ -f ~/.bash_alises_google ]]; then
+if [[ -f ~/.bash_aliases_google ]]; then
   source ~/.bash_aliases_google
 fi
 
