@@ -15,3 +15,11 @@ alias svim='gvim --servername VIM'
 alias wshell='adb wait-for-device && adb shell'
 alias build_shell='cgexec --sticky -g cpu,memory:buildshell bash'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+function adbgdb {
+  adb forward tcp:5039 tcp:5039;
+  adb shell "gdbserver --remote-debug :5039 --attach $2" &> /tmp/gdbserver &
+  adb_proc=$!
+  $HOME/perfetto/buildtools/ndk/prebuilt/linux-x86_64/bin/gdb -x $HOME/gdbremote $1
+  kill $adb_proc
+}

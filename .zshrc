@@ -43,6 +43,8 @@ zle -N edit-command-line
 bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
 
+hash -d p=$HOME/perfetto
+
 if [[ -f ~/.zshrc_google ]]; then
   source ~/.zshrc_google
 fi
