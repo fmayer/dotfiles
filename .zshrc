@@ -49,6 +49,8 @@ hash -d p=$HOME/perfetto
 
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
+export PATH="$HOME/depot_tools:$HOME/platform-tools:$PATH"
+
 if [[ -f ~/.zshrc_google ]]; then
   source ~/.zshrc_google
 fi
