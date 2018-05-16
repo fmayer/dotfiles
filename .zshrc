@@ -45,6 +45,10 @@ bindkey '^x^e' edit-command-line
 
 hash -d p=$HOME/perfetto
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
+
 if [[ -f ~/.zshrc_google ]]; then
   source ~/.zshrc_google
 fi
