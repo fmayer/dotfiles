@@ -15,6 +15,7 @@ alias svim='gvim --servername VIM'
 alias wshell='adb wait-for-device && adb shell'
 alias build_shell='cgexec --sticky -g cpu,memory:buildshell bash'
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias spython='ipython -i $HOME/ipythonstartup.py'
 
 function adbgdb {
   adb forward tcp:5039 tcp:5039;
