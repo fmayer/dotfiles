@@ -16,6 +16,11 @@ alias wshell='adb wait-for-device && adb shell'
 alias build_shell='cgexec --sticky -g cpu,memory:buildshell bash'
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias spython='ipython -i $HOME/ipythonstartup.py'
+alias ae='adb exec-out'
+
+function pselect {
+  export ANDROID_SERIAL=$(phone_db.py serial $1)
+}
 
 function adbgdb {
   adb forward tcp:5039 tcp:5039;
@@ -23,4 +28,11 @@ function adbgdb {
   adb_proc=$!
   $HOME/perfetto/buildtools/ndk/prebuilt/linux-x86_64/bin/gdb -x $HOME/gdbremote $1
   kill $adb_proc
+}
+
+function swap() {
+    local TMPFILE=tmp.$$
+    mv "$1" $TMPFILE
+    mv "$2" "$1"
+    mv $TMPFILE "$2"
 }
