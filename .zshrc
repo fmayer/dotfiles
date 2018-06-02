@@ -64,3 +64,6 @@ fi
 if [[ -f ~/.zshrc_google ]]; then
   source ~/.zshrc_google
 fi
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
