@@ -195,8 +195,8 @@ bar {
         status_command i3status
 }
 
-set $output2 DP-3
-set $output1 primary
+set $output2 primary
+set $output1 DVI-I-1
 workspace 1 output $output1
 workspace 2 output $output2
 workspace 3 output $output1
