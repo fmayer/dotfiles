@@ -31,8 +31,12 @@ bindsym Control+Shift+l exec xsecurelock
 bindsym $mod+b exec google-chrome --profile-directory="Florian"
 bindsym $mod+Shift+b exec google-chrome --profile-directory="Private"
 
+# Media Keys
 bindsym XF86MonBrightnessDown exec ~/bin/brightness - 100
 bindsym XF86MonBrightnessUp exec ~/bin/brightness + 100
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q sset Master 5%-
+bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
 
 # kill focused window
 bindsym $mod+Shift+q kill
