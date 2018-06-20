@@ -31,6 +31,9 @@ bindsym Control+Shift+l exec xsecurelock
 bindsym $mod+b exec google-chrome --profile-directory="Florian"
 bindsym $mod+Shift+b exec google-chrome --profile-directory="Private"
 
+bindsym XF86MonBrightnessDown exec ~/bin/brightness - 100
+bindsym XF86MonBrightnessUp exec ~/bin/brightness + 100
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
