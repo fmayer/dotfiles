@@ -15,4 +15,4 @@ new=$(($new>$max?$max:$new))
 new=$(($new<0?0:$new))
 echo $new > "$BRIGHTNESS_FILE"
 
-notify-send -t 500 "☀️ $new / $max"
+notify-send -t 200 "☀️ $new / $max"
