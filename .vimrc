@@ -32,6 +32,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-vinegar'
+Plugin 'majutsushi/tagbar'
 Plugin 'uplus/vim-clang-rename'
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -50,6 +51,7 @@ set go-=L " Removes left hand scroll bar
 syntax on
 map <C-n> :NERDTreeToggle<CR>
 map <C-S-p> :CtrlPBuffer<CR>
+nmap <F8> :TagbarToggle<CR>
 set number
 
 let g:hybrid_custom_term_colors = 1
