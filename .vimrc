@@ -34,6 +34,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-vinegar'
 Plugin 'majutsushi/tagbar'
 Plugin 'uplus/vim-clang-rename'
+Plugin 'travisjeffery/vim-gotosymbol'
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-x>"

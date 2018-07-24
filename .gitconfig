@@ -1,0 +1,9 @@
+[include]
+	path = .gitconfig_local
+[color]
+	ui = auto
+[cola]
+	spellcheck = false
+[alias]
+	lbh = "!git reflog --date=relative $(git symbolic-ref HEAD | sed 's|refs/heads/||')"
+	reb = "!sh -c \"git rebase $1@{upstream} $1 --fork-point\" -"
