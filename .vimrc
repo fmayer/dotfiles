@@ -76,3 +76,4 @@ if has('gui_running')
 endif
 
 set listchars=tab:>-     " > is shown at the beginning, - throughout
+set incsearch
