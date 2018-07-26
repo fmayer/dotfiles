@@ -11,6 +11,14 @@ snippet pu64
 %" PRIu64 "
 endsnippet
 
+snippet pi64
+%" PRIi64 "
+endsnippet
+
 snippet lck
 std::lock_guard<std::mutex> l($1);$0
+endsnippet
+
+snippet im
+$1_($1),$0
 endsnippet
