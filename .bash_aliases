@@ -17,6 +17,8 @@ alias build_shell='cgexec --sticky -g cpu,memory:buildshell bash'
 alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias spython='ipython -i $HOME/ipythonstartup.py'
 alias ae='adb exec-out'
+alias ar='adb root'
+alias armnt='adb root && adb remount'
 
 function pselect {
   export ANDROID_SERIAL=$(phone_db.py serial $1)

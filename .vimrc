@@ -36,6 +36,9 @@ Plugin 'majutsushi/tagbar'
 Plugin 'uplus/vim-clang-rename'
 Plugin 'travisjeffery/vim-gotosymbol'
 
+let g:ctrlp_root_markers = ['.ctrlp']
+let g:ctrlp_follow_symlinks = 1
+
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-x>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -69,7 +72,7 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+" let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 if has('gui_running')
   set guifont=Inconsolata-g\ 9
