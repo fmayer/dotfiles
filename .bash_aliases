@@ -19,6 +19,7 @@ alias spython='ipython -i $HOME/ipythonstartup.py'
 alias ae='adb exec-out'
 alias ar='adb root'
 alias armnt='adb root && adb remount'
+alias mc='mkdir $1 && cd $1'
 
 function pselect {
   export ANDROID_SERIAL=$(phone_db.py serial $1)

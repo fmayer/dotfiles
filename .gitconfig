@@ -1,3 +1,5 @@
+[branch]
+	  autosetupmerge = always
 [include]
 	path = .gitconfig_local
 [color]
