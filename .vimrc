@@ -1,6 +1,6 @@
 set nocompatible              " be iMproved, required
-if filereadable("/usr/share/vim/google/google.vim")
-  source /usr/share/vim/google/google.vim  " Initialize some basic settings.
+if filereadable($HOME . "/.vimrc_google_early")
+  source $HOME/.vimrc_google_early  " Initialize some basic settings.
 endif
 filetype plugin indent on
 syntax on
