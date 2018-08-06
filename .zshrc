@@ -50,6 +50,7 @@ hash -d p=$HOME/perfetto
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
 export PATH="$HOME/depot_tools:$HOME/platform-tools:$PATH"
+fpath=($HOME/depot_tools/zsh-goodies $fpath)
 export RPROMPT='$(phone_db.py name $ANDROID_SERIAL)'
 
 if [[ -d $HOME/bin ]]; then

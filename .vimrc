@@ -36,6 +36,25 @@ Plugin 'majutsushi/tagbar'
 Plugin 'uplus/vim-clang-rename'
 Plugin 'travisjeffery/vim-gotosymbol'
 
+Plugin 'prabirshrestha/async.vim'
+Plugin 'prabirshrestha/vim-lsp'
+Plugin 'ajh17/vimcompletesme'
+
+if executable('clangd')
+    augroup lsp_clangd
+        autocmd!
+        autocmd User lsp_setup call lsp#register_server({
+                    \ 'name': 'clangd',
+                    \ 'cmd': {server_info->['clangd']},
+                    \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+                    \ })
+        autocmd FileType c setlocal omnifunc=lsp#complete
+        autocmd FileType cpp setlocal omnifunc=lsp#complete
+        autocmd FileType objc setlocal omnifunc=lsp#complete
+        autocmd FileType objcpp setlocal omnifunc=lsp#complete
+    augroup end
+endif
+
 let g:ctrlp_root_markers = ['.ctrlp']
 let g:ctrlp_follow_symlinks = 1
 
@@ -72,10 +91,12 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-" let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 if has('gui_running')
-  set guifont=Inconsolata-g\ 9
+"    set guifont=Inconsolata-g\ 9
+"    set guifont=Hack\ 9
+    set guifont=FiraMono\ 9
 endif
 
 set listchars=tab:>-     " > is shown at the beginning, - throughout
