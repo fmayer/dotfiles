@@ -14,7 +14,6 @@ endif
 
 Plugin 'gmarik/vundle'
 Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'mbbill/undotree'
@@ -35,6 +34,7 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'majutsushi/tagbar'
 Plugin 'uplus/vim-clang-rename'
 Plugin 'travisjeffery/vim-gotosymbol'
+Plugin 'ericcurtin/CurtineIncSw.vim'
 
 Plugin 'prabirshrestha/async.vim'
 Plugin 'prabirshrestha/vim-lsp'
@@ -72,7 +72,7 @@ set guioptions-=r " Removes right hand scroll bar
 set go-=L " Removes left hand scroll bar
 
 syntax on
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
 map <C-S-p> :CtrlPBuffer<CR>
 nmap <F8> :TagbarToggle<CR>
 set number
@@ -95,8 +95,8 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 
 if has('gui_running')
 "    set guifont=Inconsolata-g\ 9
-"    set guifont=Hack\ 9
-    set guifont=FiraMono\ 9
+    set guifont=Hack\ 9
+"    set guifont=FiraMono\ 9
 endif
 
 set listchars=tab:>-     " > is shown at the beginning, - throughout
