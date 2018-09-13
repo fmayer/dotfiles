@@ -112,3 +112,5 @@ set tabstop=2
 set softtabstop=2
 " when indenting with '>', use 2 spaces width
 set shiftwidth=2
+
+map <F6> :call CurtineIncSw()<CR>

@@ -12,5 +12,3 @@
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
   aa = commit --amend -a --no-edit
-[http]
-	cookiefile = /home/fmayer/.gitcookies
