@@ -35,6 +35,9 @@ Plugin 'majutsushi/tagbar'
 Plugin 'uplus/vim-clang-rename'
 Plugin 'travisjeffery/vim-gotosymbol'
 Plugin 'ericcurtin/CurtineIncSw.vim'
+Bundle "vim-scripts/argtextobj.vim"
+Bundle 'kana/vim-textobj-user'
+Bundle "kana/vim-textobj-function"
 
 Plugin 'prabirshrestha/async.vim'
 Plugin 'prabirshrestha/vim-lsp'
