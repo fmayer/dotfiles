@@ -24,10 +24,15 @@ font pango:Roboto Condensed 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+bindsym $mod+n exec i3-input -F \
+'rename workspace to "'$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true).num')'%s"' \
+-P 'Rename workspace to '$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true).num')': '
+
+
 # start a terminal
 bindsym $mod+Return exec "gnome-terminal -- ~/bin/tmux_master.sh"
 bindsym $mod+Shift+Return exec i3-sensible-terminal
-bindsym Control+Shift+l exec xsecurelock
+bindsym Control+Shift+l exec /usr/share/goobuntu-desktop-files/xsecurelock.sh
 bindsym $mod+b exec google-chrome --profile-directory="Florian"
 bindsym $mod+Shift+b exec google-chrome --profile-directory="Private"
 
