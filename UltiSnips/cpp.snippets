@@ -3,8 +3,8 @@ std::unique_ptr<${1:Type}>(new $1($2))$0
 endsnippet
 
 snippet nocopy "no copy and assign"
-$1(const $1&) = deleted;
-$1& operator=(const $1&) = deleted;$0
+$1(const $1&) = delete;
+$1& operator=(const $1&) = delete;$0
 endsnippet
 
 snippet pu64

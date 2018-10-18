@@ -39,3 +39,7 @@ function swap() {
     mv "$2" "$1"
     mv $TMPFILE "$2"
 }
+
+function sumcol() {
+  awk "{ SUM += \$${1} } END { print SUM }"
+}

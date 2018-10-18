@@ -12,6 +12,8 @@ if filereadable($HOME . "/.vimrc_google")
   source $HOME/.vimrc_google
 endif
 
+Bundle 'machakann/vim-swap'
+Bundle 'tommcdo/vim-exchange'
 Plugin 'gmarik/vundle'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
@@ -114,3 +116,4 @@ set softtabstop=2
 set shiftwidth=2
 
 map <F6> :call CurtineIncSw()<CR>
+nnoremap <silent> "" :registers "0123456789abcdefghijklmnopqrstuvwxyz*+.<CR>
