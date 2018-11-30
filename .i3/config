@@ -30,7 +30,8 @@ bindsym $mod+n exec i3-input -F \
 
 
 # start a terminal
-bindsym $mod+Return exec "gnome-terminal -- ~/bin/tmux_master.sh"
+# bindsym $mod+Return exec "gnome-terminal -- ~/bin/tmux_master.sh"
+bindsym $mod+Return exec "gnome-terminal"
 bindsym $mod+Shift+Return exec i3-sensible-terminal
 bindsym Control+Shift+l exec /usr/share/goobuntu-desktop-files/xsecurelock.sh
 bindsym $mod+b exec google-chrome --profile-directory="Florian"

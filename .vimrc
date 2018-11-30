@@ -45,6 +45,12 @@ Plugin 'prabirshrestha/async.vim'
 Plugin 'prabirshrestha/vim-lsp'
 Plugin 'ajh17/vimcompletesme'
 
+Plugin 'nightsense/rusticated'
+Plugin 'nightsense/stellarized'
+Plugin 'nightsense/snow'
+Plugin 'soft-aesthetic/soft-era-vim'
+
+
 if executable('clangd')
     augroup lsp_clangd
         autocmd!
