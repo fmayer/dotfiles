@@ -45,3 +45,23 @@ snippet android_license
  * limitations under the License.
  */
 endsnippet
+
+snippet raii
+class $1 {
+ public:
+  friend void swap($1&, $1&);
+
+  $1() = default;
+  ~$1();
+
+  $1(const $1&) = delete;
+  $1& operator=(const $1) = delete;
+
+  $1($1&&) noexpect;
+  $1& operator=($1&&) noexpect;
+ private:
+  $1($2);
+}
+
+void swap($1&, $1&);
+endsnippet
