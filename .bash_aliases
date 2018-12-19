@@ -21,6 +21,10 @@ alias ar='adb root'
 alias armnt='adb root && adb remount'
 alias mc='mkdir $1 && cd $1'
 
+function newb {
+  git branch --track $1 origin/master && git checkout $1
+}
+
 function pselect {
   export ANDROID_SERIAL=$(phone_db.py serial $1)
 }
@@ -42,4 +46,9 @@ function swap() {
 
 function sumcol() {
   awk "{ SUM += \$${1} } END { print SUM }"
+}
+
+function zm() {
+  setopt localoptions nomatch
+  m
 }
