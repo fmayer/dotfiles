@@ -25,6 +25,10 @@ function newb {
   git branch --track $1 origin/master && git checkout $1
 }
 
+function arst {
+  adb shell su root stop $1 && sleep 1 && adb shell su root start $1
+}
+
 function pselect {
   export ANDROID_SERIAL=$(phone_db.py serial $1)
 }
@@ -51,4 +55,8 @@ function sumcol() {
 function zm() {
   setopt localoptions nomatch
   m
+}
+
+function chp() {
+  git fetch ~/perfetto $1 && git cherry-pick FETCH_HEAD
 }

@@ -3,6 +3,7 @@ source ~/antigen.zsh
 antigen use oh-my-zsh
 antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
 antigen bundle git
+antigen bundle marzocchi/zsh-notify
 antigen apply
 
 setopt histignorealldups sharehistory
