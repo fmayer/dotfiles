@@ -60,3 +60,10 @@ function zm() {
 function chp() {
   git fetch ~/perfetto $1 && git cherry-pick FETCH_HEAD
 }
+
+function gitco {
+  git checkout $1
+  if (git stash list | grep $(git rev-parse --abbrev-ref HEAD) > /dev/null); then
+    echo "You have stashes based on this branch"
+  fi
+}
