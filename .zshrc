@@ -50,7 +50,7 @@ hash -d p=$HOME/perfetto
 
 [ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
-export PATH="$HOME/clang+llvm-7.0.0-x86_64-linux-gnu-ubuntu-16.04/bin:$HOME/depot_tools:$HOME/platform-tools:$PATH"
+export PATH="$HOME/cquery/build:$HOME/clang+llvm-7.0.0-x86_64-linux-gnu-ubuntu-16.04/bin:$HOME/depot_tools:$HOME/platform-tools:$PATH"
 fpath=($HOME/depot_tools/zsh-goodies $fpath)
 export RPROMPT='$(phone_db.py name $ANDROID_SERIAL)'
 

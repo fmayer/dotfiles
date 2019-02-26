@@ -43,6 +43,7 @@ Bundle "kana/vim-textobj-function"
 
 Plugin 'prabirshrestha/async.vim'
 Plugin 'prabirshrestha/vim-lsp'
+Plugin 'pdavydov108/vim-lsp-cquery'
 Plugin 'ajh17/vimcompletesme'
 
 Plugin 'nightsense/rusticated'
@@ -50,8 +51,19 @@ Plugin 'nightsense/stellarized'
 Plugin 'nightsense/snow'
 Plugin 'soft-aesthetic/soft-era-vim'
 
-
-if executable('clangd')
+if executable('cquery')
+   au User lsp_setup call lsp#register_server({
+      \ 'name': 'cquery',
+      \ 'cmd': {server_info->['cquery']},
+      \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+      \ 'initialization_options': { 'cacheDirectory': "/home/fmayer/cquery_cache" },
+      \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+      \ })
+      autocmd FileType c setlocal omnifunc=lsp#complete
+      autocmd FileType cpp setlocal omnifunc=lsp#complete
+      autocmd FileType objc setlocal omnifunc=lsp#complete
+      autocmd FileType objcpp setlocal omnifunc=lsp#complete
+elseif executable('clangd')
     augroup lsp_clangd
         autocmd!
         autocmd User lsp_setup call lsp#register_server({
