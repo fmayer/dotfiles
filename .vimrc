@@ -56,7 +56,7 @@ if executable('cquery')
       \ 'name': 'cquery',
       \ 'cmd': {server_info->['cquery']},
       \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
-      \ 'initialization_options': { 'cacheDirectory': "/home/fmayer/cquery_cache" },
+      \ 'initialization_options': { 'cacheDirectory': $HOME . "/cquery_cache" },
       \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
       \ })
       autocmd FileType c setlocal omnifunc=lsp#complete
