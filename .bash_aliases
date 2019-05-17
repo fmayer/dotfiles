@@ -35,7 +35,7 @@ function pselect {
 
 function adbgdb {
   adb forward tcp:5039 tcp:5039;
-  adb shell "gdbserver --remote-debug :5039 --attach $2" &> /tmp/gdbserver &
+  adb shell "gdbserver64 --remote-debug :5039 --attach $2" &> /tmp/gdbserver &
   adb_proc=$!
   $HOME/perfetto/buildtools/ndk/prebuilt/linux-x86_64/bin/gdb -x $HOME/gdbremote $1
   kill $adb_proc

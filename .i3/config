@@ -34,8 +34,8 @@ bindsym $mod+n exec i3-input -F \
 bindsym $mod+Return exec "gnome-terminal"
 bindsym $mod+Shift+Return exec i3-sensible-terminal
 bindsym Control+Shift+l exec /usr/share/goobuntu-desktop-files/xsecurelock.sh
-bindsym $mod+b exec google-chrome --profile-directory="Florian"
-bindsym $mod+Shift+b exec google-chrome --profile-directory="Private"
+
+bindsym $mod+b exec echo $(xclip -o) > ~/notes/$(ls -t ~/notes | rofi -dmenu -i -p note || echo /dev/null)
 
 # Media Keys
 bindsym XF86MonBrightnessDown exec ~/bin/brightness - 100
