@@ -52,7 +52,6 @@ hash -d p=$HOME/perfetto
 
 export PATH="$HOME/cquery/build:$HOME/clang+llvm-7.0.0-x86_64-linux-gnu-ubuntu-16.04/bin:$HOME/depot_tools:$HOME/platform-tools:$PATH"
 fpath=($HOME/depot_tools/zsh-goodies $fpath)
-export RPROMPT='$(phone_db.py name $ANDROID_SERIAL)'
 
 if [[ -d $HOME/bin ]]; then
   export PATH="$HOME/bin:$PATH"
