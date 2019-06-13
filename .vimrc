@@ -33,6 +33,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-vinegar'
+Plugin 'tpope/vim-dispatch'
 Plugin 'majutsushi/tagbar'
 Plugin 'uplus/vim-clang-rename'
 Plugin 'travisjeffery/vim-gotosymbol'
@@ -51,12 +52,15 @@ Plugin 'nightsense/stellarized'
 Plugin 'nightsense/snow'
 Plugin 'soft-aesthetic/soft-era-vim'
 
+Plugin 'airblade/vim-gitgutter'
+Plugin 'terryma/vim-expand-region'
+
 if executable('cquery')
    au User lsp_setup call lsp#register_server({
       \ 'name': 'cquery',
       \ 'cmd': {server_info->['cquery']},
       \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
-      \ 'initialization_options': { 'cacheDirectory': "/home/fmayer/cquery_cache" },
+      \ 'initialization_options': { 'cacheDirectory': $HOME . "/cquery_cache" },
       \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
       \ })
       autocmd FileType c setlocal omnifunc=lsp#complete
