@@ -118,8 +118,8 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 
 if has('gui_running')
 "    set guifont=Inconsolata-g\ 9
-    set guifont=Hack\ 9
-"    set guifont=FiraMono\ 9
+"    set guifont=Hack\ 9
+    set guifont=Fira\ Code\ 9
 endif
 
 set listchars=tab:>-     " > is shown at the beginning, - throughout
