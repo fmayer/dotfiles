@@ -52,6 +52,9 @@ Plugin 'nightsense/stellarized'
 Plugin 'nightsense/snow'
 Plugin 'soft-aesthetic/soft-era-vim'
 
+Plugin 'airblade/vim-gitgutter'
+Plugin 'terryma/vim-expand-region'
+
 if executable('cquery')
    au User lsp_setup call lsp#register_server({
       \ 'name': 'cquery',
