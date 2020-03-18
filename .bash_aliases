@@ -19,10 +19,9 @@ alias spython='ipython -i $HOME/ipythonstartup.py'
 alias ae='adb exec-out'
 alias ar='adb root'
 alias armnt='adb root && adb remount'
-alias mc='mkdir $1 && cd $1'
 
 function newb {
-  git branch --track $1 origin/master && git checkout $1
+  git fetch origin && git branch --track $1 origin/master && git checkout $1
 }
 
 function arst {

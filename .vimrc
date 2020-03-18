@@ -48,12 +48,17 @@ Plugin 'pdavydov108/vim-lsp-cquery'
 Plugin 'ajh17/vimcompletesme'
 
 Plugin 'nightsense/rusticated'
+Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'nightsense/stellarized'
 Plugin 'nightsense/snow'
+Plugin '1player/lettuce.vim'
 Plugin 'soft-aesthetic/soft-era-vim'
 
 Plugin 'airblade/vim-gitgutter'
 Plugin 'terryma/vim-expand-region'
+
+Plugin 'tommcdo/vim-lion'
+Plugin 'junegunn/limelight.vim'
 
 if executable('cquery')
    au User lsp_setup call lsp#register_server({
@@ -123,7 +128,8 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 if has('gui_running')
 "    set guifont=Inconsolata-g\ 9
 "    set guifont=Hack\ 9
-    set guifont=Fira\ Code\ 9
+    set guifont=JetBrains\ Mono\ 9
+"    set guifont=Fira\ Code\ 9
 endif
 
 set listchars=tab:>-     " > is shown at the beginning, - throughout
