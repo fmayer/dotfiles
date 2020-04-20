@@ -1,12 +1,12 @@
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
 
-source ~/antigen.zsh
+# source ~/antigen.zsh
 
-antigen use oh-my-zsh
-antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
-antigen bundle git
-antigen bundle marzocchi/zsh-notify
-antigen apply
+# antigen use oh-my-zsh
+# antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
+# antigen bundle git
+# antigen bundle marzocchi/zsh-notify
+# antigen apply
 
 setopt histignorealldups sharehistory
 
