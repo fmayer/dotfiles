@@ -1,3 +1,5 @@
+[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
+
 source ~/antigen.zsh
 
 antigen use oh-my-zsh
