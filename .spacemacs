@@ -32,22 +32,13 @@ values."
    dotspacemacs-configuration-layers
    '((haskell :variables
              haskell-completion-backend 'lsp)
-    sql
-     html
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
      helm
      auto-completion
-     ;; better-defaults
+     better-defaults
      emacs-lisp
      git
      deft
      markdown
-     org
-     org-roam
      lsp
      (c-c++ :variables c-c++-backend 'lsp-clangd)
      themes-megapack
@@ -63,8 +54,6 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
-  org-web-tools
-  ox-twbs
 )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -324,7 +313,7 @@ you should place your code here."
   (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
 (setq org-refile-use-outline-path 'file)  
 (setq org-outline-path-complete-in-steps nil)
-(require 'org-roam-protocol)
+;; (require 'org-roam-protocol)
 
   (setq lsp-haskell-process-args-hie '("exec" "ghcide" "--" "--lsp")
         lsp-haskell-process-path-hie "stack"
