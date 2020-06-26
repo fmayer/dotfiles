@@ -14,3 +14,5 @@
   aa = commit --amend -a --no-edit
   du = diff @{upstream}...
   co = checkout
+[http]
+	cookiefile = /home/fmayer/.gitcookies

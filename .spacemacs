@@ -32,7 +32,7 @@ values."
    dotspacemacs-configuration-layers
    '((haskell :variables
              haskell-completion-backend 'lsp)
-    lsp
+    sql
      html
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -48,7 +48,9 @@ values."
      markdown
      org
      org-roam
-     c-c++
+     lsp
+     (c-c++ :variables c-c++-backend 'lsp-clangd)
+     themes-megapack
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -135,15 +137,15 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light
-                         zenburn)
+   dotspacemacs-themes '(material-light
+                         spacemacs-dark
+                         spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+   dotspacemacs-default-font '("Hack"
+                               :size 20
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -309,7 +311,7 @@ It is called immediately after `dotspacemacs/init', before layer configuration
 executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
-`dotspacemacs/user-config' first."
+dotspacemacs/user-config' first."
   )
 
 (defun dotspacemacs/user-config ()
@@ -319,9 +321,6 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (setq org-agenda-files '("~/notes"))
-  (setq deft-directory '"~/notes")
-  (setq org-directory '"~/notes")
   (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
 (setq org-refile-use-outline-path 'file)  
 (setq org-outline-path-complete-in-steps nil)
@@ -333,21 +332,16 @@ you should place your code here."
         )
   (add-hook 'haskell-mode-hook
             #'lsp)
-  )
-
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (org-web-tools esxml deft org-roam emacsql-sqlite emacsql smeargle orgit mmm-mode markdown-toc markdown-mode magit-gitflow magit-popup helm-gitignore helm-company helm-c-yasnippet gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy evil-magit magit git-commit with-editor transient disaster company-web web-completion-data company-statistics company-c-headers company cmake-mode clang-format auto-yasnippet yasnippet ac-ispell auto-complete web-mode tagedit slim-mode scss-mode sass-mode pug-mode helm-css-scss haml-mode emmet-mode org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+  (with-eval-after-load 'lsp-mode (lsp-register-client
+  (make-lsp-client
+    :new-connection (lsp-tramp-connection "/usr/bin/clangd")
+    :major-modes '(c-mode c++-mode)
+    :remote? t
+    :server-id 'clangd)))
+(setq org-directory (expand-file-name "~/notes/"))
+(setq deft-directory (expand-file-name "~/notes/"))
+(setq org-agenda-files '("~/notes/"))
+(setq explicit-shell-file-name "/bin/bash")
+(setq tramp-default-method "ssh")
+(customize-set-variable 'tramp-use-ssh-controlmaster-options nil)
+)
