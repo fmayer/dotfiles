@@ -315,6 +315,12 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  (with-eval-after-load 'lsp-mode (lsp-register-client
+  (make-lsp-client
+    :new-connection (lsp-tramp-connection "/usr/bin/clangd")
+    :major-modes '(c-mode c++-mode)
+    :remote? t
+    :server-id 'clangd)))
 (setq org-directory (expand-file-name "~/notes/"))
 (setq deft-directory (expand-file-name "~/notes/"))
 (setq org-agenda-files '("~/notes/"))
