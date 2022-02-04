@@ -4,6 +4,8 @@
 	path = .gitconfig_local
 [color]
 	ui = auto
+[core]
+  pager = less -F
 [cola]
 	spellcheck = false
 [alias]
