@@ -31,9 +31,10 @@ bindsym $mod+n exec i3-input -F \
 
 # start a terminal
 # bindsym $mod+Return exec "gnome-terminal -- ~/bin/tmux_master.sh"
-bindsym $mod+Return exec "gnome-terminal"
+bindsym $mod+Return exec "sakura"
 bindsym $mod+Shift+Return exec i3-sensible-terminal
 bindsym Control+Shift+l exec /usr/share/goobuntu-desktop-files/xsecurelock.sh
+bindsym Control+Shift+s exec flameshot gui
 
 # bindsym $mod+b exec echo "** $(xclip -o)" >> ~/notes/$(ls -t ~/notes | rofi -dmenu -i -p note || echo /dev/null)
 bindsym $mod+b exec python ~/instantorg.py --create
@@ -136,6 +137,9 @@ bindsym $mod+F6 workspace f6
 bindsym $mod+F7 workspace f7
 bindsym $mod+F8 workspace f8
 bindsym $mod+F9 workspace f9
+bindsym $mod+F10 workspace f10
+bindsym $mod+F11 workspace f11
+bindsym $mod+F12 workspace f12
 
 bindsym $mod+grave workspace back_and_forth
 
@@ -262,6 +266,8 @@ workspace f7 output $output1
 workspace f8 output $output2
 workspace f9 output $output1
 workspace f10 output $output2
+workspace f11 output $output1
+workspace f12 output $output2
 
 workspace KP_1 output $output1
 workspace KP_2 output $output2
