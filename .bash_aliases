@@ -18,7 +18,12 @@ alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias spython='ipython -i $HOME/ipythonstartup.py'
 alias ae='adb exec-out'
 alias ar='adb root'
+alias aw='adb wait-for-device'
 alias armnt='adb root && adb remount'
+
+function zssh {
+  ssh -t $1 'zsh -l'
+}
 
 function newb {
   git fetch origin && git branch --track $1 origin/master && git checkout $1
