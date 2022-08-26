@@ -36,8 +36,8 @@ bindsym $mod+Shift+Return exec i3-sensible-terminal
 bindsym Control+Shift+l exec /usr/share/goobuntu-desktop-files/xsecurelock.sh
 bindsym Control+Shift+s exec flameshot gui
 
-# bindsym $mod+b exec echo "** $(xclip -o)" >> ~/notes/$(ls -t ~/notes | rofi -dmenu -i -p note || echo /dev/null)
-bindsym $mod+b exec python ~/instantorg.py --create
+bindsym $mod+b exec echo "** [$(date -u +'%Y-%m-%dT%H:%M:%SZ')] $(xclip -o)" >> ~/notes/$(ls -t ~/notes | rofi -dmenu -i -p note || echo /dev/null)
+# bindsym $mod+b exec python ~/instantorg.py --create
 
 # Media Keys
 bindsym XF86MonBrightnessDown exec ~/bin/brightness - 100
